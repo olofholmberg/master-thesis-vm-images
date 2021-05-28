@@ -5,7 +5,10 @@ cd "${0%/*}"
 OWN_DIR=$(pwd)
 
 # Clone repo and init build env
-git clone -b yocto-3.3 git://git.yoctoproject.org/poky work/ 2>/dev/null
+git clone -b yocto-3.3 git://git.yoctoproject.org/poky work/                  2>/dev/null
+git -C work clone -b hardknott git://git.yoctoproject.org/meta-cloud-services 2>/dev/null
+git -C work clone -b hardknott git://git.openembedded.org/meta-openembedded   2>/dev/null
+git -C work clone -b hardknott git://git.yoctoproject.org/meta-virtualization 2>/dev/null
 cd work
 . oe-init-build-env
 
