@@ -1,7 +1,13 @@
 IMAGE_INSTALL = "packagegroup-core-boot \
                  ${CORE_IMAGE_EXTRA_INSTALL} \
                  kernel-modules \
-                 python3 \
+                 python3 python3-dev \
+                 libffi libffi-dev \
+                 openssl openssl-dev \
+                 libxml2 libxml2-dev \
+                 libxslt libxslt-dev \
+                 zlib zlib-dev \
+                 python3-ryu python3-ryu-dev \
                  "
 
 IMAGE_LINGUAS = " "
