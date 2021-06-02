@@ -7,15 +7,15 @@ fatal() {
     exec setsid sh -c "exec sh <> /dev/$ACTIVE_CONSOLE >&0 2>&1"
 }
 
-echo "**************"
-echo "Initramfs init"
-echo "**************"
-
 # Mount system folders
 mkdir -p /proc /sys /run/lock /var/lock /var/run
 mount -t proc proc /proc
 mount -t sysfs sysfs /sys
 mount -t devtmpfs none /dev
+
+echo "**************" >/dev/console
+echo "Initramfs init" >/dev/console
+echo "**************" >/dev/console
 
 # Start udev
 /sbin/udevd --daemon
@@ -23,8 +23,8 @@ udevadm trigger --action=add
 udevadm settle --timeout=3
 
 # Find the current console
-ACTIVE_CONSOLE=`cat /sys/devices/virtual/tty/console/active`
-[ -z "$CONSOLE" ] && CONSOLE="/dev/console"
+#ACTIVE_CONSOLE=`cat /sys/devices/virtual/tty/console/active`
+ACTIVE_CONSOLE="ttyAMA0"
 
 # Read args
 CMDLINE=`cat /proc/cmdline`
@@ -46,11 +46,16 @@ mount -n --move /proc $NEWROOT/proc
 mount -n --move /sys $NEWROOT/sys
 mount -n --move /dev $NEWROOT/dev
 
+
+# EXIT TO SHELL
+exec setsid sh -c "exec sh <> /dev/$ACTIVE_CONSOLE >&0 2>&1"
+# EXIT TO SHELL
+
 # ...kill udev
 udevadm control -e
 # ...and switch root
-echo "**************"
-echo "Rootfs init   "
-echo "**************"
+echo "**************" >/dev/console
+echo "Rootfs init   " >/dev/console
+echo "**************" >/dev/console
 exec switch_root -c /dev/console $NEWROOT /sbin/init $CMDLINE ||
     fatal "Couldn't switch_root, dropping to shell"
