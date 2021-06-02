@@ -36,20 +36,20 @@ for arg in $CMDLINE; do
     esac
 done
 
+# EXIT TO SHELL
+exec setsid sh -c "exec sh <> /dev/$ACTIVE_CONSOLE >&0 2>&1"
+# EXIT TO SHELL
+
 # Pivot to new/real root...
 # ...mount the device where the rootfs resides
 NEWROOT="/rootfs"
 mkdir $NEWROOT
+mount -o rw,loop,noatime,nodiratime /dev/sda2 $NEWROOT
 
 # ...move system mounts
 mount -n --move /proc $NEWROOT/proc
 mount -n --move /sys $NEWROOT/sys
 mount -n --move /dev $NEWROOT/dev
-
-
-# EXIT TO SHELL
-exec setsid sh -c "exec sh <> /dev/$ACTIVE_CONSOLE >&0 2>&1"
-# EXIT TO SHELL
 
 # ...kill udev
 udevadm control -e
