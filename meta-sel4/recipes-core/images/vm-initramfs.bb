@@ -5,7 +5,7 @@ IMAGE_INSTALL = "kernel-modules initramfs-init ${VIRTUAL-RUNTIME_base-utils} ude
 # Do not pollute the initrd image with rootfs features
 IMAGE_FEATURES = ""
 
-export IMAGE_BASENAME = "${MLPREFIX}ptne-initramfs"
+export IMAGE_BASENAME = "${MLPREFIX}vm-initramfs"
 IMAGE_LINGUAS = ""
 
 LICENSE = "MIT"
