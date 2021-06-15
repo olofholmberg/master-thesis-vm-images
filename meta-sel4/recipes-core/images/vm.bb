@@ -1,7 +1,7 @@
 IMAGE_INSTALL = "packagegroup-core-boot \
                  ${CORE_IMAGE_EXTRA_INSTALL} \
                  kernel-modules \
-                 openvswitch-testcontroller \
+                 master-thesis-openvswitch-testcontroller \
                  "
 
 IMAGE_LINGUAS = " "
