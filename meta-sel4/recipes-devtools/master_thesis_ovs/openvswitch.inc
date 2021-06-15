@@ -163,4 +163,3 @@ pkg_postinst_ontarget_${PN}-testcontroller () {
 		umask $oldumask
 	fi
 }
-

@@ -1,4 +1,4 @@
-require master-thesis-openvswitch.inc
+require openvswitch.inc
 
 DEPENDS += "virtual/kernel"
 
@@ -58,4 +58,3 @@ do_install_ptest() {
 do_install_append() {
 	oe_runmake modules_install INSTALL_MOD_PATH=${D}
 }
-
