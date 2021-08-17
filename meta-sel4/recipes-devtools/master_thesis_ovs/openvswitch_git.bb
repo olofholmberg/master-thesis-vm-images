@@ -21,7 +21,7 @@ FILESEXTRAPATHS_append := "${THISDIR}/${PN}-git:"
 
 SRCREV = "${AUTOREV}"
 
-SRC_URI += "git://github.com/olofholmberg/master-thesis-ovs-for-seL4-yocto-image.git;protocol=git;branch=master \
+SRC_URI += "git://github.com/olofholmberg/master-thesis-ovs-for-yocto-image.git;protocol=git;branch=master \
             file://openvswitch-add-ptest-71d553b995d0bd527d3ab1e9fbaf5a2ae34de2f3.patch \
             file://run-ptest \
             file://disable_m4_check.patch \
