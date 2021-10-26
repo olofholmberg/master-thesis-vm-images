@@ -1,3 +1,9 @@
+#
+# Copyright 2021, Mattias Waldo
+#
+# SPDX-License-Identifier: GPL-2.0-only
+#
+
 SUMMARY = "seL4 master thesis initramfs"
 
 IMAGE_INSTALL = "kernel-modules initramfs-init ${VIRTUAL-RUNTIME_base-utils} udev base-passwd ${ROOTFS_BOOTSTRAP_INSTALL}"

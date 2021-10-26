@@ -1,3 +1,9 @@
+#
+# Copyright 2021, Mattias Waldo
+#
+# SPDX-License-Identifier: GPL-2.0-only
+#
+
 SUMMARY = "Scripts for initializing an initramfs and pivoting to a root filesystem."
 LICENSE = "CLOSED"
 

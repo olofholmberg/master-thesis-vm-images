@@ -1,3 +1,9 @@
+#
+# Copyright 2021, Olof Holmberg
+#
+# SPDX-License-Identifier: GPL-2.0-only
+#
+
 set(MASTER_THESIS_VM_IMAGES_DIR "${CMAKE_CURRENT_LIST_DIR}" CACHE STRING "")
 mark_as_advanced(MASTER_THESIS_VM_IMAGES_DIR)
 

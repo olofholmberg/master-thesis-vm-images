@@ -1,3 +1,9 @@
+#
+# Copyright 2021, Mattias Waldo
+#
+# SPDX-License-Identifier: GPL-2.0-only
+#
+
 IMAGE_INSTALL = "packagegroup-core-boot \
                  ${CORE_IMAGE_EXTRA_INSTALL} \
                  kernel-modules \

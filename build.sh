@@ -1,3 +1,9 @@
+#
+# Copyright 2021, Mattias Waldo
+#
+# SPDX-License-Identifier: GPL-2.0-only
+#
+
 export DOCKER_BUILDKIT=1
 docker build -t sel4_vm_build .
 
